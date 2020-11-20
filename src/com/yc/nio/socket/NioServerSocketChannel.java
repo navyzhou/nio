@@ -22,7 +22,7 @@ public class NioServerSocketChannel {
 
 
 	public static void main(String[] args) throws IOException {  
-		Selector selector = Selector.open();  //创建选择器  
+		Selector selector = Selector.open();  // 创建选择器  
 		
 		ServerSocketChannel listenerChannel = ServerSocketChannel.open();  // 打开监听信道  
 		
@@ -39,7 +39,7 @@ public class NioServerSocketChannel {
 		 */
 		listenerChannel.register(selector,SelectionKey.OP_ACCEPT);  
 		
-		//创建一个处理协议的实现类,由它来具体操作  
+		// 创建一个处理协议的实现类,由它来具体操作  
 		TCPProtocol protocol = new TCPProtocolImpl(BufferSize);  
 
 		// 反复循环,等待IO  
